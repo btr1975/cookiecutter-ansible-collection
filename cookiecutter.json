@@ -1,9 +1,9 @@
 {
     "full_name": "Firstname Lastname",
     "email": "example@example.com",
-    "git_username_or_organization": "user-name",
-    "collection_namespace": "A short description",
-    "collection_name": "A short description",
+    "git_username_or_organization": "username",
+    "collection_namespace": "some-namespace",
+    "collection_name": "some_name",
 	"collection_version": "0.1.0",
 	"collection_description": "A short description",
     "git_url": "https://github.com/{{ cookiecutter.git_username_or_organization }}/{{ cookiecutter.collection_namespace }}.{{ cookiecutter.collection_name }}",

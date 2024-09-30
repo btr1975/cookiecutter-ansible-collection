@@ -1,3 +1,6 @@
+# These are the libraries required develop or test your app
+# NOTICE THE FIRST LINE INCLUDES THE requirements.txt
+#
 -r requirements.txt
 pytest-cov
 pytest-ansible
