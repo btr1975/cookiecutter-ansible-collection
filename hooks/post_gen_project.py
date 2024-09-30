@@ -9,7 +9,7 @@ import shutil
 
 REMOVE_PATHS_NO_INVENTORY_PLUGINS = [
     '{% if cookiecutter.include_example_inventory_plugins != "y" %}plugins/inventory/mongo_inventory.py{% endif %}',
-    '{% if cookiecutter.include_example_inventory_plugins != "y" %}module_utils/mongo{% endif %}',
+    '{% if cookiecutter.include_example_inventory_plugins != "y" %}plugins/module_utils/mongo{% endif %}',
 ]
 
 
