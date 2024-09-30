@@ -7,6 +7,12 @@ import os
 import shutil
 
 
+REMOVE_PATHS_NO_INVENTORY_PLUGINS = [
+    '{% if cookiecutter.include_example_inventory_plugins != "y" %}plugins/inventory/mongo_inventory.py{% endif %}',
+    '{% if cookiecutter.include_example_inventory_plugins != "y" %}module_utils/mongo{% endif %}',
+]
+
+
 def remove_paths(paths_to_remove: List[str]) -> None:
     """Remove files and directories
 
@@ -24,4 +30,4 @@ def remove_paths(paths_to_remove: List[str]) -> None:
 
 
 if __name__ == "__main__":
-    pass
+    remove_paths(REMOVE_PATHS_NO_INVENTORY_PLUGINS)
