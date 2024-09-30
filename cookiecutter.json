@@ -8,12 +8,16 @@
 	"collection_description": "A short description",
     "git_url": "https://github.com/{{ cookiecutter.git_username_or_organization }}/{{ cookiecutter.collection_namespace }}.{{ cookiecutter.collection_name }}",
     "include_example_inventory_plugins": ["y", "n"],
+    "include_example_action_plugins": ["y", "n"],
     "__git_repo_name": "{{ cookiecutter.collection_namespace.lower().replace(' ', '_').replace('-', '_') }}.{{ cookiecutter.collection_name.lower().replace(' ', '_').replace('-', '_') }}",
     "__template_repo": "https://github.com/btr1975/cookiecutter-ansible-collection",
     "__template_version": "1.0.0",
     "_new_lines":"\n",
     "_copy_without_render": [
-        ".github"
+        ".github",
+        "templates/ios",
+        "templates/iosxr",
+        "templates/nxos"
     ],
     "__prompts__": {
         "full_name": "Your Full Name",
@@ -26,6 +30,11 @@
         "git_url": "The full GIT URL",
         "include_example_inventory_plugins": {
             "__prompt__": "Include example inventory plugins?",
+            "y": "Yes",
+            "n": "No"
+        },
+        "include_example_action_plugins": {
+            "__prompt__": "Include example action plugins?",
             "y": "Yes",
             "n": "No"
         }

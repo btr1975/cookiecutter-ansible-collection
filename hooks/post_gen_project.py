@@ -12,6 +12,13 @@ REMOVE_PATHS_NO_INVENTORY_PLUGINS = [
     '{% if cookiecutter.include_example_inventory_plugins != "y" %}plugins/module_utils/mongo{% endif %}',
 ]
 
+REMOVE_PATHS_NO_ACTION_PLUGINS = [
+    '{% if cookiecutter.include_example_action_plugins != "y" %}plugins/action/standard_acls.py{% endif %}',
+    '{% if cookiecutter.include_example_action_plugins != "y" %}templates/ios{% endif %}',
+    '{% if cookiecutter.include_example_action_plugins != "y" %}templates/iosxr{% endif %}',
+    '{% if cookiecutter.include_example_action_plugins != "y" %}templates/nxos{% endif %}',
+]
+
 
 def remove_paths(paths_to_remove: List[str]) -> None:
     """Remove files and directories
@@ -31,3 +38,4 @@ def remove_paths(paths_to_remove: List[str]) -> None:
 
 if __name__ == "__main__":
     remove_paths(REMOVE_PATHS_NO_INVENTORY_PLUGINS)
+    remove_paths(REMOVE_PATHS_NO_ACTION_PLUGINS)
