@@ -1,5 +1,15 @@
 # Built in Templates
 
+{% if cookiecutter.include_example_action_plugins == "y" %}
+# Example Templates Information
+
+* Since you selected the example action plugins option, there are 3 templates for a standard access list.
+  The templates **DO NOT** include the rendering filters on purpose due to the way cookicutter works.
+
+* To add the filters in you can call them like so "namespace.name.filter_name" in the template.
+
+{% endif %}
+
 ### Templates directory required layout
 
 * The folders are laid out so templates can be found from most specific to lease specific 
