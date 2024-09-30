@@ -1,0 +1,33 @@
+---
+
+extends: "default"
+
+yaml-files:
+  - "*.yaml"
+  - "*.yml"
+
+ignore:
+  - "venv/"
+
+rules:
+  line-length:
+    max: 120
+  indentation:
+    spaces: "consistent"
+    indent-sequences: true
+    check-multi-line-strings: false
+  hyphens:
+    max-spaces-after: 1
+  new-lines:
+    type: "unix"
+  quoted-strings:
+    quote-type: "double"
+    required: true
+    extra-required: []
+    extra-allowed: []
+    allow-quoted-quotes: false
+    check-keys: false
+  truthy:
+    allowed-values: ["true", "false"]
+    check-keys: true
+  trailing-spaces: {}

@@ -1,0 +1,27 @@
+{
+    "full_name": "Firstname Lastname",
+    "email": "example@example.com",
+    "git_username_or_organization": "user-name",
+    "collection_namespace": "A short description",
+    "collection_name": "A short description",
+	"collection_version": "0.1.0",
+	"collection_description": "A short description",
+    "git_url": "https://github.com/{{ cookiecutter.git_username_or_organization }}/{{ cookiecutter.collection_namespace }}.{{ cookiecutter.collection_name }}",
+    "__git_repo_name": "{{ cookiecutter.collection_namespace.lower().replace(' ', '_').replace('-', '_') }}.{{ cookiecutter.collection_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "__template_repo": "https://github.com/btr1975/cookiecutter-ansible-collection",
+    "__template_version": "1.0.0",
+    "_new_lines":"\n",
+    "_copy_without_render": [
+        ".github"
+    ],
+    "__prompts__": {
+        "full_name": "Your Full Name",
+        "email": "Your E-Mail Address",
+        "git_username_or_organization": "Your GitHub Username or GitHub Organization Name",
+        "collection_namespace": "The Collection Namespace",
+        "collection_name": "The Collection Name",
+        "collection_version": "The Collection Version",
+        "collection_description": "A short description",
+        "git_url": "The full GIT URL"
+    }
+}
