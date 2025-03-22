@@ -6,3 +6,5 @@ pytest-cov
 pytest-ansible
 black
 yamllint
+pip-audit
+bandit

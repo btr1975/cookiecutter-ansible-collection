@@ -11,7 +11,7 @@
     "include_example_action_plugins": ["y", "n"],
     "__git_repo_name": "{{ cookiecutter.collection_namespace.lower().replace(' ', '_').replace('-', '_') }}.{{ cookiecutter.collection_name.lower().replace(' ', '_').replace('-', '_') }}",
     "__template_repo": "https://github.com/btr1975/cookiecutter-ansible-collection",
-    "__template_version": "1.0.0",
+    "__template_version": "1.0.1",
     "_new_lines":"\n",
     "_copy_without_render": [
         ".github",
