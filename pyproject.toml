@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cookiecutter-ansible-collection"
-version = "1.0.1"
+version = "2.0.0"
 dynamic = ["readme"]
 requires-python = ">=3.9"
 description = "A cookiecutter for an Ansible Collection"
