@@ -11,6 +11,8 @@ sys.path.append(os.path.join(base_path))
 def simple_generation() -> dict:
     options = {
         "email": "name@example.com",
+        "minimum_python_version": "3.9",
+        "package_manager": "pip",
         "include_example_inventory_plugins": "y",
         "include_example_action_plugins": "y",
     }
@@ -101,6 +103,8 @@ def simple_generation_files() -> List[str]:
 def generation_no_inventory_plugins() -> dict:
     options = {
         "email": "name@example.com",
+        "minimum_python_version": "3.9",
+        "package_manager": "pip",
         "include_example_inventory_plugins": "n",
         "include_example_action_plugins": "y",
     }
@@ -188,6 +192,8 @@ def generation_no_inventory_plugins_files() -> List[str]:
 def generation_no_action_plugins() -> dict:
     options = {
         "email": "name@example.com",
+        "minimum_python_version": "3.9",
+        "package_manager": "pip",
         "include_example_inventory_plugins": "y",
         "include_example_action_plugins": "n",
     }

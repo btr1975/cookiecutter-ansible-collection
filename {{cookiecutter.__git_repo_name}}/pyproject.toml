@@ -1,3 +1,7 @@
+{% if cookiecutter.package_manager == 'uv' %}
+
+
+{% endif %}
 [tool.pytest.ini_options]
 addopts = "--strict-markers"
 markers = [
@@ -26,3 +30,12 @@ exclude_dirs = [
     "docs",
     "collections",
 ]
+
+{% if cookiecutter.package_manager == 'uv' %}
+# UV settings reference https://docs.astral.sh/uv/reference/settings/
+
+[tool.uv]
+keyring-provider = "subprocess"
+native-tls = true
+
+{% endif %}
