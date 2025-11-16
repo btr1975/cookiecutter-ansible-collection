@@ -117,6 +117,7 @@ line-length = 120
 exclude_dirs = [
     "tests",
     "venv",
+    ".venv",
     "docs",
     "collections",
 ]
