@@ -8,7 +8,7 @@ from typing import Dict, Callable, Union
 
 
 import jinja2
-from ansible.plugins import to_native
+from ansible.module_utils.common.text.converters import to_native
 from ansible.errors import AnsibleUndefinedVariable, AnsibleFilterError
 
 from ansible_collections.{{ cookiecutter.__git_repo_name }}.plugins.module_utils.validators.ip_address_validators import (

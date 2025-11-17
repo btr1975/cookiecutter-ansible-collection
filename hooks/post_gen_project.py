@@ -19,6 +19,16 @@ REMOVE_PATHS_NO_ACTION_PLUGINS = [
     '{% if cookiecutter.include_example_action_plugins != "y" %}templates/nxos{% endif %}',
 ]
 
+REMOVE_PATHS_UV = [
+    '{% if cookiecutter.package_manager == "uv" %}requirements.txt{% endif %}',
+    '{% if cookiecutter.package_manager == "uv" %}requirements-dev.txt{% endif %}',
+    '{% if cookiecutter.package_manager == "uv" %}.github/workflows/test-coverage-lint.yml{% endif %}',
+]
+
+REMOVE_PATHS_PIP = [
+    '{% if cookiecutter.package_manager == "pip" %}.github/workflows/test-coverage-lint-uv.yml{% endif %}',
+]
+
 
 def remove_paths(paths_to_remove: List[str]) -> None:
     """Remove files and directories
@@ -39,3 +49,5 @@ def remove_paths(paths_to_remove: List[str]) -> None:
 if __name__ == "__main__":
     remove_paths(REMOVE_PATHS_NO_INVENTORY_PLUGINS)
     remove_paths(REMOVE_PATHS_NO_ACTION_PLUGINS)
+    remove_paths(REMOVE_PATHS_UV)
+    remove_paths(REMOVE_PATHS_PIP)

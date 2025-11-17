@@ -1,9 +1,9 @@
 # Makefile for project needs
 # Author: Ben Trachtenberg
-# Version: 1.0.1
+# Version: 1.0.2
 #
 
-.PHONY: all info coverage pytest black yamllint check-security check-vuln
+.PHONY: all info coverage pytest black yamllint check-security check-vuln pip-export
 
 info:
 	@echo "make options"
@@ -13,6 +13,9 @@ info:
 	@echo "    yamllint          To lint yaml"
 	@echo "    check-vuln        To check for vulnerabilities in the dependencies"
 	@echo "    check-security    To check for vulnerabilities in the code"
+{% if cookiecutter.package_manager == 'uv' %}	@echo "    pip-export          To export the requirements to requirements.txt and requirements-dev.txt"{% endif %}
+
+{% if cookiecutter.package_manager == 'pip' %}
 
 all: black yamllint coverage check-security check-vuln
 
@@ -34,3 +37,29 @@ check-vuln:
 
 check-security:
 	@bandit -c pyproject.toml -r .
+
+{% elif cookiecutter.package_manager == 'uv' %}
+
+all: black yamllint coverage check-security
+
+coverage:
+	@uv run pytest --cov --cov-report=html -vvv
+
+pytest:
+	@uv run pytest --cov -vvv
+
+black:
+	@uv run black plugins/
+	@uv run black tests/
+
+yamllint:
+	@uv run yamllint ./
+
+check-security:
+	@uv run bandit -c pyproject.toml -r .
+
+pip-export:
+	@uv export --no-dev --no-emit-project --no-editable > requirements.txt
+	@uv export --no-emit-project --no-editable > requirements-dev.txt
+
+{% endif %}
