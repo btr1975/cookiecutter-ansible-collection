@@ -8,3 +8,4 @@ black
 yamllint
 pip-audit
 bandit
+checkov

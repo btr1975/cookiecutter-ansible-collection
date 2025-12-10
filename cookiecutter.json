@@ -8,7 +8,6 @@
 	"collection_description": "A short description",
     "git_url": "https://github.com/{{ cookiecutter.git_username_or_organization }}/{{ cookiecutter.collection_namespace }}.{{ cookiecutter.collection_name }}",
     "minimum_python_version": [
-        "3.9",
         "3.10",
         "3.11",
         "3.12",
@@ -21,9 +20,11 @@
     ],
     "include_example_inventory_plugins": ["y", "n"],
     "include_example_action_plugins": ["y", "n"],
-    "__git_repo_name": "{{ cookiecutter.collection_namespace.lower().replace(' ', '_').replace('-', '_') }}.{{ cookiecutter.collection_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "__collection_namespace_normalized": "{{ cookiecutter.collection_namespace.lower().replace(' ', '_').replace('-', '_') }}",
+    "__collection_name_normalized": "{{ cookiecutter.collection_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "__git_repo_name": "{{ cookiecutter.__collection_namespace_normalized }}.{{ cookiecutter.__collection_name_normalized }}",
     "__template_repo": "https://github.com/btr1975/cookiecutter-ansible-collection",
-    "__template_version": "2.0.0",
+    "__template_version": "2.0.1",
     "_new_lines":"\n",
     "_copy_without_render": [
         ".github",
@@ -42,7 +43,6 @@
         "git_url": "The full GIT URL",
         "minimum_python_version": {
             "__prompt__": "Which minimum Python version will be supported",
-            "3.9": "3.9",
             "3.10": "3.10",
             "3.11": "3.11",
             "3.12": "3.12",
