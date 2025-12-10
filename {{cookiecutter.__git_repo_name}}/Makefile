@@ -3,7 +3,7 @@
 # Version: 1.0.2
 #
 
-.PHONY: all info coverage pytest black yamllint check-security check-vuln pip-export
+.PHONY: all info coverage pytest black yamllint check-security check-vuln pip-export checkov
 
 info:
 	@echo "make options"
@@ -13,11 +13,12 @@ info:
 	@echo "    yamllint          To lint yaml"
 	@echo "    check-vuln        To check for vulnerabilities in the dependencies"
 	@echo "    check-security    To check for vulnerabilities in the code"
+	@echo "    checkov           To check for vulnerabilities using checkov"
 {% if cookiecutter.package_manager == 'uv' %}	@echo "    pip-export          To export the requirements to requirements.txt and requirements-dev.txt"{% endif %}
 
 {% if cookiecutter.package_manager == 'pip' %}
 
-all: black yamllint coverage check-security check-vuln
+all: black yamllint checkov coverage check-security check-vuln
 
 coverage:
 	@pytest --cov --cov-report=html -vvv
@@ -38,9 +39,12 @@ check-vuln:
 check-security:
 	@bandit -c pyproject.toml -r .
 
+checkov:
+	@checkov --config-file .checkov.yml
+
 {% elif cookiecutter.package_manager == 'uv' %}
 
-all: black yamllint coverage check-security
+all: black yamllint checkov coverage check-security
 
 coverage:
 	@uv run pytest --cov --cov-report=html -vvv
@@ -57,6 +61,9 @@ yamllint:
 
 check-security:
 	@uv run bandit -c pyproject.toml -r .
+
+checkov:
+	@uv run checkov --config-file .checkov.yml
 
 pip-export:
 	@uv export --no-dev --no-emit-project --no-editable > requirements.txt
