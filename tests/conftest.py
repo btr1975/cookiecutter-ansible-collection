@@ -11,7 +11,7 @@ sys.path.append(os.path.join(base_path))
 def simple_generation_pip() -> dict:
     options = {
         "email": "name@example.com",
-        "minimum_python_version": "3.9",
+        "minimum_python_version": "3.10",
         "package_manager": "pip",
         "include_example_inventory_plugins": "y",
         "include_example_action_plugins": "y",
@@ -24,7 +24,7 @@ def simple_generation_pip() -> dict:
 def simple_generation_uv() -> dict:
     options = {
         "email": "name@example.com",
-        "minimum_python_version": "3.9",
+        "minimum_python_version": "3.10",
         "package_manager": "uv",
         "include_example_inventory_plugins": "y",
         "include_example_action_plugins": "y",
@@ -101,6 +101,9 @@ def simple_generation_files_pip() -> List[str]:
         ".gitattributes",
         ".gitignore",
         ".yamllint.yml",
+        ".ansible-lint.yml",
+        ".checkov.yml",
+        "CHANGELOG.md",
         "galaxy.yml",
         "Makefile",
         "pyproject.toml",
@@ -158,6 +161,9 @@ def simple_generation_files_uv() -> List[str]:
         ".gitattributes",
         ".gitignore",
         ".yamllint.yml",
+        ".ansible-lint.yml",
+        ".checkov.yml",
+        "CHANGELOG.md",
         "galaxy.yml",
         "Makefile",
         "pyproject.toml",
@@ -171,7 +177,7 @@ def simple_generation_files_uv() -> List[str]:
 def generation_no_inventory_plugins_pip() -> dict:
     options = {
         "email": "name@example.com",
-        "minimum_python_version": "3.9",
+        "minimum_python_version": "3.10",
         "package_manager": "pip",
         "include_example_inventory_plugins": "n",
         "include_example_action_plugins": "y",
@@ -184,7 +190,7 @@ def generation_no_inventory_plugins_pip() -> dict:
 def generation_no_inventory_plugins_uv() -> dict:
     options = {
         "email": "name@example.com",
-        "minimum_python_version": "3.9",
+        "minimum_python_version": "3.10",
         "package_manager": "uv",
         "include_example_inventory_plugins": "n",
         "include_example_action_plugins": "y",
@@ -258,6 +264,9 @@ def generation_no_inventory_plugins_files_pip() -> List[str]:
         ".gitattributes",
         ".gitignore",
         ".yamllint.yml",
+        ".ansible-lint.yml",
+        ".checkov.yml",
+        "CHANGELOG.md",
         "galaxy.yml",
         "Makefile",
         "pyproject.toml",
@@ -313,6 +322,9 @@ def generation_no_inventory_plugins_files_uv() -> List[str]:
         ".gitattributes",
         ".gitignore",
         ".yamllint.yml",
+        ".ansible-lint.yml",
+        ".checkov.yml",
+        "CHANGELOG.md",
         "galaxy.yml",
         "Makefile",
         "pyproject.toml",
@@ -326,7 +338,7 @@ def generation_no_inventory_plugins_files_uv() -> List[str]:
 def generation_no_action_plugins_pip() -> dict:
     options = {
         "email": "name@example.com",
-        "minimum_python_version": "3.9",
+        "minimum_python_version": "3.10",
         "package_manager": "pip",
         "include_example_inventory_plugins": "y",
         "include_example_action_plugins": "n",
@@ -339,7 +351,7 @@ def generation_no_action_plugins_pip() -> dict:
 def generation_no_action_plugins_uv() -> dict:
     options = {
         "email": "name@example.com",
-        "minimum_python_version": "3.9",
+        "minimum_python_version": "3.10",
         "package_manager": "uv",
         "include_example_inventory_plugins": "y",
         "include_example_action_plugins": "n",
@@ -412,6 +424,9 @@ def generation_no_action_plugins_files_pip() -> List[str]:
         ".gitattributes",
         ".gitignore",
         ".yamllint.yml",
+        ".ansible-lint.yml",
+        ".checkov.yml",
+        "CHANGELOG.md",
         "galaxy.yml",
         "Makefile",
         "pyproject.toml",
@@ -465,6 +480,9 @@ def generation_no_action_plugins_files_uv() -> List[str]:
         ".gitattributes",
         ".gitignore",
         ".yamllint.yml",
+        ".ansible-lint.yml",
+        ".checkov.yml",
+        "CHANGELOG.md",
         "galaxy.yml",
         "Makefile",
         "pyproject.toml",
