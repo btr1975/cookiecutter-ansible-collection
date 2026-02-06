@@ -1,12 +1,13 @@
 # Makefile for project needs
 # Author: Ben Trachtenberg
-# Version: 1.0.2
+# Version: 1.0.3
 #
 
-.PHONY: all info coverage pytest black yamllint check-security check-vuln pip-export checkov
+.PHONY: all info coverage pytest black yamllint check-security check-vuln pip-export checkov ansible-lint
 
 info:
 	@echo "make options"
+	@echo "    ansible-lint      To run ansible lint"
 	@echo "    black             To format code with black"
 	@echo "    coverage          To run coverage and display ASCII and output to htmlcov"
 	@echo "    pytest            To run pytest with verbose option"
@@ -18,7 +19,7 @@ info:
 
 {% if cookiecutter.package_manager == 'pip' %}
 
-all: black yamllint checkov coverage check-security check-vuln
+all: black ansible-lint yamllint checkov coverage check-security check-vuln
 
 coverage:
 	@pytest --cov --cov-report=html -vvv
@@ -42,9 +43,12 @@ check-security:
 checkov:
 	@checkov --config-file .checkov.yml
 
+ansible-lint:
+	@ansible-lint
+
 {% elif cookiecutter.package_manager == 'uv' %}
 
-all: black yamllint checkov coverage check-security
+all: black ansible-lint yamllint checkov coverage check-security
 
 coverage:
 	@uv run pytest --cov --cov-report=html -vvv
@@ -64,6 +68,9 @@ check-security:
 
 checkov:
 	@uv run checkov --config-file .checkov.yml
+
+ansible-lint:
+	@uv run ansible-lint
 
 pip-export:
 	@uv export --no-dev --no-emit-project --no-editable > requirements.txt
