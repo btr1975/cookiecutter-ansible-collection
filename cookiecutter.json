@@ -18,6 +18,20 @@
         "uv",
         "pip"
     ],
+    "galaxy_first_tag": [
+        "application",
+        "cloud",
+        "database",
+        "eda",
+        "infrastructure",
+        "linux",
+        "monitoring",
+        "networking",
+        "security",
+        "storage",
+        "tools",
+        "windows"
+    ],
     "include_example_inventory_plugins": ["y", "n"],
     "include_example_action_plugins": ["y", "n"],
     "__collection_namespace_normalized": "{{ cookiecutter.collection_namespace.lower().replace(' ', '_').replace('-', '_') }}",
@@ -53,6 +67,21 @@
             "__prompt__": "Which pacakge manager for Python will be supported",
             "uv": "UV By Astral",
             "pip": "PIP (The built in Python Package Installer)"
+        },
+        "galaxy_first_tag": {
+            "__prompt__": "Ansible galaxy.yml requires at least 1 tag to search on. What does this collection deal in?  (You can add others later)",
+            "application": "Application Collection",
+            "cloud": "Cloud Collection",
+            "database": "Database Collection",
+            "eda": "EDA Collection",
+            "infrastructure": "Infrastructure Collection",
+            "linux": "Linux Collection",
+            "monitoring": "Monitoring Collection",
+            "networking": "Networking Collection",
+            "security": "Security Collection",
+            "storage": "Storage Collection",
+            "tools": "Tools Collection",
+            "windows": "Windows Collection"
         },
         "include_example_inventory_plugins": {
             "__prompt__": "Include example inventory plugins?",
