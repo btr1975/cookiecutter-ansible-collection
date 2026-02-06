@@ -8,8 +8,6 @@ verbosity: 1
 
 quiet: true
 
-parseable: true
-
 offline: true
 
 exclude_paths:

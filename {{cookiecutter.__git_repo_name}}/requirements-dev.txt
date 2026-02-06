@@ -9,3 +9,4 @@ yamllint
 pip-audit
 bandit
 checkov
+ansible-lint

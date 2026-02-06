@@ -64,6 +64,7 @@ dev = [
     "yamllint",
     "bandit",
     "checkov",
+    "ansible-lint",
 ]
 
 [project.urls]
